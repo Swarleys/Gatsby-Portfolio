@@ -6,5 +6,9 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: 'Portfolio de Esteban Ramos',
+    author: 'Esteban Ramos'
+  },
   plugins: [`gatsby-plugin-styled-components`]
 }
