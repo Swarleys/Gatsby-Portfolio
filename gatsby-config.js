@@ -11,6 +11,7 @@ module.exports = {
     author: "Esteban Ramos",
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-contentful`,
       options: {

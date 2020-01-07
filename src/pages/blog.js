@@ -3,6 +3,7 @@ import { graphql, useStaticQuery, Link } from 'gatsby';
 import styled from "styled-components"
 
 import Layout from "../components/layout"
+import Head from "../components/head"
 
 
 const  BlogPage = () => {
@@ -51,10 +52,11 @@ const  BlogPage = () => {
 
   return (
     <Layout>
+      <Head title="Blog" />
       <h1>Blog</h1>
       <StyledOl>
         {data.allContentfulBlogPost.edges.map(edge => {
-          const {title, publishedDate, slug } = edge.node;
+          const { title, publishedDate, slug } = edge.node
           return (
             <StyledLi key={slug}>
               <Link to={`/blog/${slug}`}>
