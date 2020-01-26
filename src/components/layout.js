@@ -7,7 +7,7 @@ import styled from 'styled-components'
 const Layout = (props) => {
   const Container = styled.div`
     margin: 0 auto;
-    max-width: 750px;
+    max-width: 900px;
     padding: 1rem;
 
     display: flex;
