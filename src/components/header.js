@@ -9,6 +9,10 @@ const Header = () => {
       site {
         siteMetadata {
           title
+          navLinks {
+            name
+            slug
+          }
         }
       }
     }
@@ -17,16 +21,16 @@ const Header = () => {
   const activeClassName = "active";
 
   const HeaderLink = styled(Link).attrs({ activeClassName: activeClassName })`
-    color: #999;
+    color: #666;
     font-size: 0.9rem;
     margin-right: 1.3rem;
     text-decoration: none;
 
     &:hover {
-      color: #666;
+      color: #444;
     }
     &.active {
-      color: #333;
+      color: #222;
     }
   `
   const Header = styled.header`
@@ -42,25 +46,24 @@ const Header = () => {
     font-size: 3rem;
     text-decoration: none;
   `
+  const { title, navLinks } = data.site.siteMetadata;
+
   return (
     <Header>
       <h1>
-          <Title to="/">{data.site.siteMetadata.title}</Title>
+          <Title to="/">{title}</Title>
       </h1>
       <nav>
         <NavList>
-          <li>
-            <HeaderLink to="/">Home</HeaderLink>
-          </li>
-          <li>
-            <HeaderLink to="/blog">Blog</HeaderLink>
-          </li>
-          <li>
-            <HeaderLink to="/about">About</HeaderLink>
-          </li>
-          <li>
-            <HeaderLink to="/contact">Contact</HeaderLink>
-          </li>
+          {navLinks.map(navLink => {
+            return (
+              <li>
+                <HeaderLink to={navLink.slug}>
+                  {navLink.name}
+                </HeaderLink>
+              </li>
+            )
+          })}
         </NavList>
       </nav>
     </Header>

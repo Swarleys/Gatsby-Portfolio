@@ -8,13 +8,21 @@ const Head = ({ title }) => {
       site {
         siteMetadata {
           title
+          description
         }
       }
     }
   `)
 
   return (
-    <Helmet title={`${title} | ${data.site.siteMetadata.title}`} />
+    <Helmet 
+      title={`${title} | ${data.site.siteMetadata.title}`} 
+      htmlAttributes={{
+        lang: `en`,
+      }}  
+    >
+      <meta name="description" content={data.site.siteMetadata.description} />
+    </Helmet>
   )
 }
 

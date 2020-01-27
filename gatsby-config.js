@@ -9,6 +9,25 @@ module.exports = {
   siteMetadata: {
     title: "Portfolio de Esteban Ramos",
     author: "Esteban Ramos",
+    description: "Portfolio de Esteban Ramos",
+    navLinks: [
+      {
+        name: 'Home',
+        slug: '/'
+      },
+      {
+        name: 'Blog',
+        slug: '/blog'
+      },
+      {
+        name: 'About',
+        slug: '/about'
+      },
+      {
+        name: 'Contact',
+        slug: '/contact'
+      }
+    ]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
