@@ -57,7 +57,7 @@ const Header = () => {
         <NavList>
           {navLinks.map(navLink => {
             return (
-              <li>
+              <li key={navLink.slug}>
                 <HeaderLink to={navLink.slug}>
                   {navLink.name}
                 </HeaderLink>
