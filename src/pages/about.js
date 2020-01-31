@@ -12,7 +12,7 @@ const AboutPage = () => {
       <h1>About me</h1>
       <p>
         I'm a Front-End Developer currently working at Marfeel and living in
-        Barcelona.
+        Barcelona
       </p>
       <p>
         Need a developer? <Link to="/contact">Contact me.</Link>
