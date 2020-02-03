@@ -10,7 +10,6 @@ const NotFound = () => {
       <Head title="404 page"/>
       <h1>Page not found</h1>
       <p>
-        Last thest of the day
         <Link to="/"> Head to home.</Link>
       </p>
     </Layout>
