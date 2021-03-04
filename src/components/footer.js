@@ -2,6 +2,10 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from "styled-components"
 
+const StyledFooter = styled.footer`
+    margin-top: 3rem;
+  `
+
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -12,10 +16,6 @@ const Footer = () => {
       }
     }
   `)
-
-  const StyledFooter = styled.footer`
-    margin-top: 3rem;
-  `
 
   return (
     <StyledFooter>

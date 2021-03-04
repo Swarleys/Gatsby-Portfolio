@@ -3,6 +3,35 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 
 import styled from 'styled-components'
 
+const activeClassName = "active";
+
+const HeaderLink = styled(Link).attrs({ activeClassName: activeClassName })`
+    color: #666;
+    font-size: 0.9rem;
+    margin-right: 1.3rem;
+    text-decoration: none;
+
+    &:hover {
+      color: #444;
+    }
+    &.active {
+      color: #222;
+    }
+  `
+const HeaderNav = styled.header`
+    padding: 1rem 0 3rem;
+  `
+const NavList = styled.ul`
+    display: flex;
+    list-style-type: none;
+    margin: 0
+  `
+const Title = styled(Link)`
+    color: #000;
+    font-size: 3rem;
+    text-decoration: none;
+  `
+
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -18,40 +47,12 @@ const Header = () => {
     }
   `)
 
-  const activeClassName = "active";
-
-  const HeaderLink = styled(Link).attrs({ activeClassName: activeClassName })`
-    color: #666;
-    font-size: 0.9rem;
-    margin-right: 1.3rem;
-    text-decoration: none;
-
-    &:hover {
-      color: #444;
-    }
-    &.active {
-      color: #222;
-    }
-  `
-  const Header = styled.header`
-    padding: 1rem 0 3rem;
-  `
-  const NavList = styled.ul`
-    display: flex;
-    list-style-type: none;
-    margin: 0
-  `
-  const Title = styled(Link)`
-    color: #000;
-    font-size: 3rem;
-    text-decoration: none;
-  `
   const { title, navLinks } = data.site.siteMetadata;
 
   return (
-    <Header>
+    <HeaderNav>
       <h1>
-          <Title to="/">{title}</Title>
+        <Title to="/">{title}</Title>
       </h1>
       <nav>
         <NavList>
@@ -66,7 +67,7 @@ const Header = () => {
           })}
         </NavList>
       </nav>
-    </Header>
+    </HeaderNav>
   )
 }
 

@@ -4,8 +4,7 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import styled from 'styled-components'
 
-const Layout = (props) => {
-  const Container = styled.div`
+const Container = styled.div`
     margin: 0 auto;
     max-width: 900px;
     padding: 1rem;
@@ -15,13 +14,16 @@ const Layout = (props) => {
     min-height: 100vh;
   `;
 
-  const Content = styled.div`
+const Content = styled.div`
     flex-grow: 1;
   `
+
+const Layout = (props) => {
+
   return (
     <Container>
       <Content>
-        <Header/>
+        <Header />
         {props.children}
       </Content>
       <Footer />

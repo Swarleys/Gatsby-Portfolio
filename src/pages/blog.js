@@ -5,27 +5,11 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import Head from "../components/head"
 
-
-const  BlogPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
-        edges {
-          node {
-            title
-            slug
-            publishedDate(formatString: "MMMM Do, YYYY")
-          }
-        }
-      }
-    }
-  `)
-
-  const StyledOl = styled.ol`
+const StyledOl = styled.ol`
     list-style-type: none;
     margin: 0;
   `
-  const StyledLi = styled.li`
+const StyledLi = styled.li`
     margin: 1rem 0;
 
     a {
@@ -49,6 +33,21 @@ const  BlogPage = () => {
       font-style: italic;
     }
   `
+
+const BlogPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+        edges {
+          node {
+            title
+            slug
+            publishedDate(formatString: "MMMM Do, YYYY")
+          }
+        }
+      }
+    }
+  `)
 
   return (
     <Layout>
