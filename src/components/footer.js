@@ -1,10 +1,6 @@
-import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-import styled from "styled-components"
-
-const StyledFooter = styled.footer`
-    margin-top: 3rem;
-  `
+import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import { Box, Text } from "@chakra-ui/react"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -18,9 +14,9 @@ const Footer = () => {
   `)
 
   return (
-    <StyledFooter>
-      <p>Created by {data.site.siteMetadata.author}, © 2020</p>
-    </StyledFooter>
+    <Box as="footer" marginTop="3rem">
+      <Text>Created by {data.site.siteMetadata.author}, © 2020</Text>
+    </Box>
   )
 }
 

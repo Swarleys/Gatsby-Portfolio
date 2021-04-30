@@ -39,7 +39,22 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-emotion`,
+    {
+      resolve: "@chakra-ui/gatsby-plugin",
+      options: {
+        /**
+         * @property {boolean} [isResettingCSS=true]
+         * if false, this plugin will not use `<CSSReset />
+         */
+        isResettingCSS: true,
+        /**
+         * @property {boolean} [isUsingColorMode=true]
+         * if false, this plugin will not use <ColorModeProvider />
+         */
+        isUsingColorMode: true,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -48,21 +63,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-relative-images`,
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 750,
-              linkImagesToOriginal: false,
-            },
-          },
-        ],
-      },
-    },
+    `gatsby-plugin-sharp`
   ],
 }

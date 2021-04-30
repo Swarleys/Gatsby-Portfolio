@@ -1,15 +1,14 @@
+import { Heading } from "@chakra-ui/layout"
 import React from "react"
-
-import Layout from "../components/layout"
 import Head from "../components/head"
 
 
 const ContactPage = () => {
   return (
-    <Layout>
+    <>
       <Head title="Contact" />
-      <h1>Contact</h1>
-    </Layout>
+      <Heading as="h1">Contact</Heading>
+    </>
   )
 }
 

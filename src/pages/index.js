@@ -1,19 +1,18 @@
 import React from "react"
 import { Link } from "gatsby"
-
-import Layout from "../components/layout"
+import { Heading, Text } from "@chakra-ui/react"
 import Head from "../components/head"
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <>
       <Head title="Home"/>
-      <h1>Hello</h1>
-      <h2>I'm Esteban, a Front-End Developer living in Barcelona and working at Marfeel.</h2>
-      <p>
+      <Heading as="h1">Hello</Heading>
+      <Heading as="h2">I'm Esteban, a Front-End Developer living in Barcelona and working at Marfeel.</Heading>
+      <Text>
         Need a developer? <Link to="/contact">Contact me.</Link>
-      </p>
-    </Layout>
+      </Text>
+    </>
   )
 }
 
