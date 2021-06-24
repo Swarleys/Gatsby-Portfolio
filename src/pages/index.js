@@ -12,7 +12,7 @@ const IndexPage = () => {
       <Text>
         Need a developer? <Link to="/contact">Contact me.</Link>
       </Text>
-      <Text>This is a test</Text>
+      <Text>This is a test, second test</Text>
     </>
   )
 }
